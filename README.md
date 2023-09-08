@@ -6,6 +6,7 @@ Simple blockchain implementation in Node.js and TypeScript.
 ### Usage
 
 Blockchain code in src/main.ts
+
 Tests in src/main.spec.ts
 
 ### Classes

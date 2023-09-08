@@ -77,8 +77,10 @@ class Chain {
       return;
     }
 
-    // CHECK BALANCE
-    if (transaction.amount > this.getBalance(senderPublicKey)) {
+    if (
+      transaction.amount < 0 ||
+      transaction.amount > this.getBalance(senderPublicKey)
+    ) {
       return false;
     }
 
@@ -136,27 +138,4 @@ class Wallet {
   }
 }
 
-// Genesis wallet
-const genesis = new Wallet();
-// Create first block and will overwrite transaction with 5000 free coins.
-genesis.sendMoney(0, "");
-
-// Blockchain active from now on with satoshi having 5000 coins.
-console.log(
-  `Genesis wallet balance: ${Chain.instance.getBalance(genesis.publicKey)}`
-);
-
-const kasposhi = new Wallet();
-
-genesis.sendMoney(50, kasposhi.publicKey);
-
-console.log(
-  `Kasposhi wallet balance: ${Chain.instance.getBalance(kasposhi.publicKey)}`
-);
-
-console.log(
-  `Genesis wallet balance: ${Chain.instance.getBalance(genesis.publicKey)}`
-);
-
-console.log("---------");
-console.log(Chain.instance.chain);
+export { Chain, Wallet, Transaction, Block };

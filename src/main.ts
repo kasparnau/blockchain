@@ -44,7 +44,6 @@ class Chain {
 
   mine(nonce: number) {
     let solution = 1;
-    console.log("⛏️  mining...");
 
     while (true) {
       const hash = crypto.createHash("MD5");
@@ -52,8 +51,8 @@ class Chain {
 
       const attempt = hash.digest("hex");
 
-      if (attempt.slice(0, 4) === "0000") {
-        console.log(`Solved: ${solution}`);
+      if (attempt.slice(0, 1) === "0") {
+        console.log(`⛏️  Mined Proof of Work: ${solution}:${attempt}`);
         return solution;
       }
 

@@ -44,7 +44,6 @@ class Chain {
 
   mine(nonce: number) {
     let solution = 1;
-    console.log("⛏️  mining...");
 
     while (true) {
       const hash = crypto.createHash("MD5");

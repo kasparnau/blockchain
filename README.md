@@ -1,11 +1,15 @@
 # Blockchain
 ![Tests](https://github.com/kasparnau/blockchain/actions/workflows/main.yml/badge.svg)
 
-Simple blockchain implementation in Node.js and TypeScript.
+Rudimentary OOP-based blockchain implementation in Node.js and TypeScript.
 
-### Usage
+### Features
 
-Blockchain code in src/main.ts
+- Chain is a linked list of blocks utilizing `SHA256 hash of last block` for transaction validation to achieve `consensus`.
+- Proof of work implementation - block have a random `nonce`, keep mining until MD5 of `nonce + solution` has `x` leading zeros.
+- RSA .pem key-pair for wallets, with full `public` and `private` keys support. You can send to someone's public key or fetch their balance. You need the private key to `sign the transaction`.
+
+### Testing
 
 Tests in src/main.spec.ts
 

@@ -11,7 +11,8 @@ Rudimentary OOP-based blockchain implementation in Node.js and TypeScript.
 
 ### Testing
 
-Tests in src/main.spec.ts
+- Tests are located in src/main.spec.ts.
+- GitHub Actions are implemented to automate testing.
 
 ### Classes
 
